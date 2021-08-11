@@ -6,9 +6,9 @@ RSpec.describe 'StaticPages', type: :system do
   end
 
   describe 'GET /home' do
-    it 'homeページが表示される' do
+    it 'タイトルタブに基本タイトルのみ表示される' do
       visit static_pages_home_path
-      expect(page).to have_title "Home | #{@base_title}"
+      expect(page).to have_title @base_title.to_s
     end
   end
 
