@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'StaticPages', type: :request do
+  describe '/' do
+    it 'homeページが表示される' do
+      get(root_path)
+      expect(response).to have_http_status(:ok)
+    end
+  end
   describe 'GET /home' do
     it 'homeページが表示される' do
       get(static_pages_home_path)
